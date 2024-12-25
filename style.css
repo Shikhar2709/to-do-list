@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background: linear-gradient(126deg, #c36e6e, #347fa1);
+
+}
+
+.todo-app {
+    margin: 100px auto 20px;
+    padding: 40px 25px 50px;
+    background-color: rgb(156, 177, 177);
+    max-width: 540px;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.todo-app #heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(17, 35, 51);
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.input-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aliceblue;
+    padding-left: 20px;
+    margin: 25px;
+    border-radius: 30px;
+}
+
+.input-text input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.2rem;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.input-text button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #194a45;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #05302c;
+    font-weight: 600;
+}
+
+ul li {
+    list-style: none;
+    font-size: 1.2rem;
+    padding: 12px 0px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+ul li p {
+    flex-grow: 1;
+    font-size: 1.5rem;
+    font-family: 600;
+    width: 50%;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url("images/unchecked.png");
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #264747;
+}
+
+ul li.checked::before {
+    background-image: url("images/blue.png");
+    color: #363f3d;
+    font-weight: 400;
+}
+
+.btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+    margin: 0px 2px 0px 10px;
+}
+
+.delete {
+    color: #fff;
+    background: rgb(216, 107, 107);
+}
+
+.edit {
+    color: #fff;
+    background-color: rgb(95, 139, 95);
+}
+
+.edit:hover {
+    background-color: rgb(29, 50, 29);
+    font-size: 1.3rem;
+    transition: 0.2s ease-in-out;
+}
+
+.delete:hover {
+    background: rgb(214, 55, 55);
+    font-size: 1.3rem;
+    transition: 0.2s ease-in-out;
+}
+
+/* responsive  */
+@media (max-width: 580px) and (max-width: 470px) {
+    .todo-app {
+        margin: 25px;
+        width: 90%;
+    }
+
+    .todo-app input {
+        width: 50%;
+    }
+}
+
+@media (max-width: 460px) {
+    .todo-app {
+        width: 90%;
+        padding: 20px 0px 70px;
+        margin: 25px;
+    }
+
+    .todo-app input {
+        width: 50%;
+    }
+
+    .todo-app button {
+        padding: 15px 24px;
+    }
+
+    ul li {
+        width: 90%;
+        margin-left: 15px;
+    }
+
+    .btn {
+        width: 10px;
+        height: 10px;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    /* Ensures content fills available space */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    /* background: linear-gradient(270deg, #ff7eb3, #ff758c, #ff6f61, #ff8c61); */
+    background-size: 400% 400%;
+    color: hsl(0, 0%, 0%);
+    font-size: 1.4rem;
+    font-weight: bolder;
+    /* box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    animation: gradientBG 6s ease infinite;
+    z-index: 1000;
+}
+
+footer p {
+    margin: 0;
+}
+
+.footer-highlight {
+    font-weight: bold;
+    color: #ffe600;
+    text-decoration: underline;
+}
+
+.footer-heart {
+    color: #ff4747;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
